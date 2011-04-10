@@ -1,0 +1,8 @@
+FFFFound Widget is a little Air desktop application that let you browse the latest picture posted on ffffound.com
+
+
+It uses
+* Greensock Tweenlite (http://www.greensock.com/tweenlite/)
+* as3corelib (https://github.com/mikechambers/as3corelib)
+* Yapix Font, listed on http://www.dafont.com/yapix.font as uneder GPL and created by Fabiane Lima (http://fabianelima.com)
+* The ffffound.com favicon, converted into multiple png to fit Air requirement.

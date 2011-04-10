@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<lang>
+<!-- Main file -->
+<init>
+	<fr_FR><![CDATA[- Initialisation...]]></fr_FR>
+	<en_UK><![CDATA[- Initialisation...]]></en_UK>
+</init>
+<error>
+	<fr_FR><![CDATA[- Erreur : %%1]]></fr_FR>
+	<en_UK><![CDATA[- Error: %%1]]></en_UK>
+</error>
+<pic_ready>
+	<fr_FR><![CDATA[- Image prête : %%1]]></fr_FR>
+	<en_UK><![CDATA[- Picture ready: %%1]]></en_UK>
+</pic_ready>
+<view_pic>
+	<fr_FR><![CDATA[- Image %%1 sur %%2]]></fr_FR>
+	<en_UK><![CDATA[- Picture %%1 on %%2]]></en_UK>
+</view_pic>
+
+<!-- Help menu -->
+
+
+<!-- Menu -->
+<no_pic_yet>
+	<fr_FR><![CDATA[Pas encore d'image chargée]]></fr_FR>
+	<en_UK><![CDATA[No picture loaded yet]]></en_UK>
+</no_pic_yet>
+<view_on_ffffound>
+	<fr_FR><![CDATA[voir sur ffffound]]></fr_FR>
+	<en_UK><![CDATA[view on fffound]]></en_UK>
+</view_on_ffffound>
+<picture_link_ffff>
+	<fr_FR><![CDATA[lien direct sur ffffound]]></fr_FR>
+	<en_UK><![CDATA[direct link on ffffound]]></en_UK>
+</picture_link_ffff>
+<picture_link_author>
+	<fr_FR><![CDATA[lien direct sur le site de l'auteur]]></fr_FR>
+	<en_UK><![CDATA[direct link on the author's site]]></en_UK>
+</picture_link_author>
+<copy_pic>
+	<fr_FR><![CDATA[copier l'image]]></fr_FR>
+	<en_UK><![CDATA[copy picture]]></en_UK>
+</copy_pic>
+<save_pic>
+	<fr_FR><![CDATA[sauvegarder l'image]]></fr_FR>
+	<en_UK><![CDATA[save picture]]></en_UK>
+</save_pic>
+<title>
+	<fr_FR><![CDATA[titre : %%1]]></fr_FR>
+	<en_UK><![CDATA[title: %%1]]></en_UK>
+</title>
+<author>
+	<fr_FR><![CDATA[auteur : %%1]]></fr_FR>
+	<en_UK><![CDATA[author: %%1]]></en_UK>
+</author>
+<pub_date>
+	<!-- arguments order : YYYY MM DD HH mm ss TZ -->
+	<fr_FR><![CDATA[publié le %%3-%%2-%%1 à %%4:%%5:%%6 %%7]]></fr_FR>
+	<en_UK><![CDATA[published on %%3-%%2-%%1 at %%4:%%5:%%6 %%7]]></en_UK>
+</pub_date>
+<source>
+	<fr_FR><![CDATA[source : %%1]]></fr_FR>
+	<en_UK><![CDATA[source: %%1]]></en_UK>
+</source>
+<saved_by_singular>
+	<fr_FR><![CDATA[sauvé par %%1 personne]]></fr_FR>
+	<en_UK><![CDATA[saved by %%1 people]]></en_UK>
+</saved_by_singular>
+<saved_by_plural>
+	<fr_FR><![CDATA[sauvé par %%1 personnes]]></fr_FR>
+	<en_UK><![CDATA[saved by %%1 people]]></en_UK>
+</saved_by_plural>
+
+<!-- Image Handler -->
+<load_rss>
+	<fr_FR><![CDATA[Chargement du flux rss]]></fr_FR>
+	<en_UK><![CDATA[Rss feed loading]]></en_UK>
+</load_rss>
+<error_loading_pic>
+	<fr_FR><![CDATA[Erreur lors du chargement de l'image]]></fr_FR>
+	<en_UK><![CDATA[Error during picture loading]]></en_UK>
+</error_loading_pic>
+
+
+</lang>

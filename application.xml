@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<application xmlns="http://ns.adobe.com/air/application/2.5">
+	
+	<id>fr.thiel.ffffoundwidget.FFFFoundWidget</id> 
+	<versionNumber>0.1</versionNumber>
+	<versionLabel>1.0 Beta1</versionLabel>
+	<filename>FFFFoundWidget</filename> 
+	
+	<name>FFFFoundWidget</name> 
+	<description>
+		<text xml:lang="en">Browse the latest pictures posted on ffffound.com</text> 
+		<text xml:lang="fr">Parcourez les dernières images postées sur ffffound.com</text> 
+	</description> 
+	<copyright>Copyright (c) 2011 Maximilien Thiel</copyright> 
+	
+	<initialWindow> 
+		<title>FFFFoundWidget</title> 
+		<content>FFFFoundWidget.swf</content> 
+		<systemChrome>none</systemChrome> 
+		<transparent>false</transparent> 
+		<visible>true</visible> 
+		<minimizable>true</minimizable> 
+		<maximizable>false</maximizable> 
+		<resizable>false</resizable> 
+	</initialWindow>
+	
+	<programMenuFolder>FFFFoundWidget</programMenuFolder>
+	<icon> 
+		<image16x16>ffffound16.png</image16x16> 
+		<image32x32>ffffound32.png</image32x32> 
+		<image48x48>ffffound48.png</image48x48> 
+		<image128x128>ffffound128.png</image128x128>  
+	</icon>
+	<allowBrowserInvocation>false</allowBrowserInvocation> 
+	
+</application>
