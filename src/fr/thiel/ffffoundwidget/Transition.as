@@ -37,7 +37,7 @@
 
 
 
-package fr.thiel.ffffoundwidget 
+package fr.thiel.ffffoundwidget 
 {
 	import com.adobe.crypto.MD5;
 	import com.greensock.TweenLite;
@@ -52,7 +52,11 @@
 	 */
 	public class Transition 
 	{
-		public static const ALPHA:String = "alpha";
+		public static const ALPHA:String						= "alpha";
+		public static const MOVE_RIGHT:String				= "move_right";
+		public static const MOVE_LEFT:String				= "move_left";
+		public static const MOVE_UP:String					= "move_up";
+		public static const MOVE_DOWN:String				= "move_down";
 		
 		private var _previous:BitmapData;
 		private var _next:BitmapData;
@@ -89,12 +93,13 @@
 			trace(next.height);
 			_previous = previous;
 			_next = next;
-			_type = type;
+			_type = (type == null) ? ALPHA : type;
 			_pMatrix = pMatrix;
 			_nMatrix = nMatrix;
 			
 			Main.MainStage.frameRate = Main.ANIM_FRAMERATE;
 			
+			var dest:Number;
 			switch(_type)
 			{
 				case ALPHA:
@@ -107,6 +112,38 @@
 					color.alphaMultiplier = 1;
 					color.alphaOffset = 0;
 					_tweens.push(TweenLite.to(color, _duration, { alphaOffset:-255, data:color, onComplete:endTransition } ));
+				}break;
+				
+				case MOVE_LEFT:
+				{
+					dest = _nMatrix.tx;
+					_nMatrix.translate(_next.width, 0);
+					_tweens.push(TweenLite.to(_nMatrix, _duration, { tx:dest } ));
+					_tweens.push(TweenLite.to(_pMatrix, _duration, { tx:_pMatrix.tx - _previous.width, onComplete:endTransition } ));
+				}break;
+				
+				case MOVE_RIGHT:
+				{
+					dest = _nMatrix.tx;
+					_nMatrix.translate(-_next.width, 0);
+					_tweens.push(TweenLite.to(_nMatrix, _duration, { tx:dest } ));
+					_tweens.push(TweenLite.to(_pMatrix, _duration, { tx:_pMatrix.tx + _previous.width, onComplete:endTransition } ));
+				}break;
+				
+				case MOVE_DOWN:
+				{
+					dest = _nMatrix.ty;
+					_nMatrix.translate(0, -_next.height);
+					_tweens.push(TweenLite.to(_nMatrix, _duration, { ty:dest } ));
+					_tweens.push(TweenLite.to(_pMatrix, _duration, { ty:_pMatrix.ty + _previous.height, onComplete:endTransition } ));
+				}break;
+				
+				case MOVE_UP:
+				{
+					dest = _nMatrix.ty;
+					_nMatrix.translate(0, _next.height);
+					_tweens.push(TweenLite.to(_nMatrix, _duration, { ty:dest } ));
+					_tweens.push(TweenLite.to(_pMatrix, _duration, { ty:_pMatrix.ty - _previous.height, onComplete:endTransition } ));
 				}break;
 			}
 			
@@ -127,6 +164,15 @@
 					_container.draw(_previous, _pMatrix, c);
 					c = ColorTransform(_tweens[0].data);
 					_container.draw(_next, _nMatrix, c);
+				}break;
+				
+				case MOVE_LEFT:
+				case MOVE_RIGHT:
+				case MOVE_UP:
+				case MOVE_DOWN:
+				{
+					_container.draw(_previous, _pMatrix);
+					_container.draw(_next, _nMatrix);
 				}break;
 			}
 			

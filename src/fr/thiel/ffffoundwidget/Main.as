@@ -251,10 +251,10 @@ package fr.thiel.ffffoundwidget
 						//hide help
 					}break;
 					
-					case Settings.NEXT :				{ _images.nextPicture(); } break;
-					case Settings.PREVIOUS :		{ _images.previousPicture(); } break;
-					case Settings.LAST :				{ _images.lastPicture(); } break;
-					case Settings.FIRST :				{ _images.firstPicture(); } break;
+					case Settings.NEXT :				{ _images.nextPicture(Transition.MOVE_RIGHT); } break;
+					case Settings.PREVIOUS :		{ _images.previousPicture(Transition.MOVE_LEFT); } break;
+					case Settings.LAST :				{ _images.lastPicture(Transition.MOVE_DOWN); } break;
+					case Settings.FIRST :				{ _images.firstPicture(Transition.MOVE_UP); } break;
 					
 					case Settings.SAVE :				{ downloadPic(); } break;
 					case Settings.COPY :				{ picToClipboard(); } break;

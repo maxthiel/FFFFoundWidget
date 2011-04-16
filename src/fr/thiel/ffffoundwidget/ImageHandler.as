@@ -328,7 +328,7 @@ package fr.thiel.ffffoundwidget
 			}
 		}
 		
-		private function displayPic(picIndex:int):void 
+		private function displayPic(picIndex:int, transition:String = null):void 
 		{
 			if (picIndex >= _picPool.length) picIndex %= _picsNumber;//loop
 			else if (picIndex < 0) picIndex = (_picsNumber + picIndex % _picsNumber);
@@ -346,7 +346,7 @@ package fr.thiel.ffffoundwidget
 			}
 			else current = _picPool[_currentDisplayedPic] as BitmapData;
 			trace("curent " + _currentDisplayedPic + " and next " + picIndex);
-			_transitionEngine.startTransition(current, _currentPicMatrix, _picPool[picIndex], m, _viewContent);
+			_transitionEngine.startTransition(current, _currentPicMatrix, _picPool[picIndex], m, _viewContent, transition);
 			
 			_previousDisplayedPic = _currentDisplayedPic,
 			_currentDisplayedPic = picIndex;
@@ -400,24 +400,26 @@ package fr.thiel.ffffoundwidget
 			return _picPool[picIndex].Infos;
 		}
 		
-		public function firstPicture():void 
+		public function firstPicture(transition:String = null):void 
 		{
-			displayPic(0);
+			if (_currentDisplayedPic == 0) return;
+			displayPic(0, transition);
 		}
 		
-		public function nextPicture():void 
+		public function nextPicture(transition:String = null):void 
 		{
-			displayPic(_currentDisplayedPic+1);
+			displayPic(_currentDisplayedPic+1, transition);
 		}
 		
-		public function previousPicture():void 
+		public function previousPicture(transition:String = null):void 
 		{
-			displayPic(_currentDisplayedPic-1);
+			displayPic(_currentDisplayedPic-1, transition);
 		}
 		
-		public function lastPicture():void 
+		public function lastPicture(transition:String = null):void 
 		{
-			displayPic(_picsNumber-1);
+			if (_picsNumber - 1 == _currentDisplayedPic) return;
+			displayPic(_picsNumber-1, transition);
 		}
 		
 		public function get TotalPictures():int
